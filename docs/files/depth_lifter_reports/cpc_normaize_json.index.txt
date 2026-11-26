@@ -1,0 +1,45 @@
+source_file = cpc_normaize_json.py
+source_modified = 2026-11-22 16:58:27
+name(parameters) -> return  [decorators]    first line   (classes: first-last)
+
+attach(parent, context=None)    1807
+clean_data(data)    190
+deep_merge(base, update)    156
+load_config()    166
+main(argv=None)    1858
+normalize_records(records)    217
+parse_args(argv=None)    1831
+save_config(cfg)    183
+class JSONNormalizerApp(TreeviewMixin, tk.Frame)    251-1804
+    __init__(self, master, embedded=False, host_context=None, initial_file=None)    252
+    _apply_theme(self)    1556
+    _attach_gateway_controller(self)    950
+    _build_config_tab(self)    614
+    _build_gateway_tab(self)    934
+    _build_log_tab(self)    559
+    _build_normalize_tab(self)    395
+    _build_ui(self)    344
+    _build_ui_choices_tab(self)    718
+    _build_window(self)    335
+    _display_data(self, data)    1337
+    _gateway_fallback(self, message)    992
+    _gateway_path(self)    1025
+    _json_indent(self)    1450
+    _on_close(self)    1800
+    _register_and_style_comboboxes(self)    1621
+        walk(widget)    1624
+    _restore_tab(self)    1741
+    _tab_changed(self, _event=None)    1761
+    apply_ui_choices(self)    1491
+    browse_output(self)    1074
+    browse_source(self)    1045
+    clear_log(self)    1479
+    load_source(self)    1107
+    log(self, message)    1464
+    normalize_source(self)    1172
+    record_selected(self, _event=None)    1424
+    reload_config(self)    1688
+    save_config_from_ui(self)    1650
+    save_normalized(self)    1237
+    save_ui_choices(self)    1549
+    shutdown(self)    1770

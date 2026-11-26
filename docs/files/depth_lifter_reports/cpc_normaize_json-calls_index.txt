@@ -1,0 +1,427 @@
+source_file = cpc_normaize_json.py
+source_modified = 2026-11-22 16:58:27
+function()    first line;  -> what it calls    (where that comes from)    xN = times
+
+attach()    1807
+    -> dict    (builtin)
+    -> host_context.get    (local variable or parameter)    x3
+    -> JSONNormalizerApp    (this file, line 251)
+clean_data()    190
+    -> clean_data    (this file, line 190)    x2
+    -> data.items    (local variable or parameter)
+    -> data.replace    (local variable or parameter)
+    -> data.replace('ō', 'o').replace    (method or call on an expression)
+    -> data.replace('ō', 'o').replace('’', '’'…    (method or call on an expression)    x4
+    -> isinstance    (builtin)    x3
+deep_merge()    156
+    -> (update or {}).items    (method or call on an expression)
+    -> copy.deepcopy    (import copy)
+    -> deep_merge    (this file, line 156)
+    -> isinstance    (builtin)    x2
+    -> result.get    (local variable or parameter)
+load_config()    166
+    -> cfg.get    (local variable or parameter)    x2
+    -> copy.deepcopy    (import copy)
+    -> deep_merge    (this file, line 156)
+    -> isinstance    (builtin)
+    -> json.load    (import json)
+    -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)
+    -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)
+    -> open    (builtin)
+    -> os.path.isfile    (import os)
+main()    1858
+    -> JSONNormalizerApp    (this file, line 251)
+    -> parse_args    (this file, line 1831)
+    -> root.mainloop    (local variable or parameter)
+    -> tk.Tk    (import tkinter as tk)
+normalize_records()    217
+    -> all_fields.update    (local variable or parameter)
+    -> copy.deepcopy    (import copy)
+    -> isinstance    (builtin)    x5
+    -> record.keys    (local variable or parameter)
+    -> set    (builtin)
+parse_args()    1831
+    -> argparse.ArgumentParser    (import argparse)
+    -> parser.add_argument    (local variable or parameter)    x2
+    -> parser.parse_args    (local variable or parameter)
+save_config()    183
+    -> json.dump    (import json)
+    -> open    (builtin)
+    -> os.replace    (import os)
+class JSONNormalizerApp    251-1804
+    __init__()    252
+        -> app.get    (local variable or parameter)    x2
+        -> apply_app_icon    (from cpc_ui_theme import apply_app_icon)
+        -> bool    (builtin)    x3
+        -> dict    (builtin)
+        -> isinstance    (builtin)
+        -> load_config    (this file, line 166)
+        -> master.winfo_toplevel    (local variable or parameter)
+        -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)
+        -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)
+        -> os.path.isfile    (import os)
+        -> self._apply_theme    (this class, line 1556)
+        -> self._build_ui    (this class, line 344)
+        -> self._build_window    (this class, line 335)
+        -> self._restore_tab    (this class, line 1741)
+        -> self.after_idle    (attribute of self (inherited or set at run time))    x2
+        -> self.host_context.get    (attribute of self (inherited or set at run time))    x9
+        -> self.pack    (attribute of self (inherited or set at run time))
+        -> self.window.deiconify    (attribute of self (inherited or set at run time))
+        -> self.window.protocol    (attribute of self (inherited or set at run time))
+        -> self.window.withdraw    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+        -> super().__init__    (parent class)
+    _apply_theme()    1556
+        -> apply_theme    (from cpc_ui_theme import apply_theme)
+        -> dict    (builtin)
+        -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)
+        -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)
+        -> self._register_and_style_comboboxes    (this class, line 1621)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x4
+        -> self.host_context.get    (attribute of self (inherited or set at run time))    x5
+        -> theme_palette    (from cpc_ui_theme import theme_palette)    x2
+    _attach_gateway_controller()    950
+        -> cls    (local variable or parameter)
+        -> getattr    (builtin)    x2
+        -> self._gateway_fallback    (this class, line 992)    x3
+        -> self._gateway_path    (this class, line 1025)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+    _build_config_tab()    614
+        -> app.get    (local variable or parameter)    x3
+        -> buttons.grid    (local variable or parameter)
+        -> enumerate    (builtin)
+        -> frame.columnconfigure    (local variable or parameter)
+        -> frame.pack    (local variable or parameter)
+        -> str    (builtin)    x3
+        -> tk.StringVar    (import tkinter as tk)    x3
+        -> ttk.Button    (from tkinter import ttk)    x2
+        -> ttk.Button(buttons, text='Load Config',…    (method or call on an expression)
+        -> ttk.Button(buttons, text='Save Config',…    (method or call on an expression)
+        -> ttk.Entry    (from tkinter import ttk)
+        -> ttk.Entry(frame, textvariable=self.conf…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)    x2
+        -> ttk.Label    (from tkinter import ttk)    x3
+        -> ttk.Label(frame, text='Application Conf…    (method or call on an expression)
+        -> ttk.Label(frame, text='Configuration is…    (method or call on an expression)
+        -> ttk.Label(frame, text=label).grid    (method or call on an expression)
+    _build_gateway_tab()    934
+        -> self.after_idle    (attribute of self (inherited or set at run time))
+        -> self.gateway_host.grid    (attribute of self (inherited or set at run time))
+        -> self.gateway_tab.grid_columnconfigure    (attribute of self (inherited or set at run time))
+        -> self.gateway_tab.grid_rowconfigure    (attribute of self (inherited or set at run time))
+        -> ttk.Frame    (from tkinter import ttk)
+    _build_log_tab()    559
+        -> frame.columnconfigure    (local variable or parameter)
+        -> frame.pack    (local variable or parameter)
+        -> frame.rowconfigure    (local variable or parameter)
+        -> scroll.grid    (local variable or parameter)
+        -> self.log_text.configure    (attribute of self (inherited or set at run time))
+        -> self.log_text.grid    (attribute of self (inherited or set at run time))
+        -> tk.Text    (import tkinter as tk)
+        -> toolbar.pack    (local variable or parameter)
+        -> ttk.Button    (from tkinter import ttk)
+        -> ttk.Button(toolbar, text='Clear Log', c…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)    x2
+        -> ttk.Label    (from tkinter import ttk)
+        -> ttk.Label(toolbar, text='JSON Normalize…    (method or call on an expression)
+        -> ttk.Scrollbar    (from tkinter import ttk)
+    _build_normalize_tab()    395
+        -> body.add    (local variable or parameter)    x2
+        -> body.pack    (local variable or parameter)
+        -> build_treeview    (from cpc_treeviews import build_treeview)
+        -> preview_box.columnconfigure    (local variable or parameter)
+        -> preview_box.grid    (local variable or parameter)
+        -> preview_box.rowconfigure    (local variable or parameter)
+        -> preview_frame.columnconfigure    (local variable or parameter)
+        -> preview_frame.rowconfigure    (local variable or parameter)
+        -> preview_x.grid    (local variable or parameter)
+        -> preview_y.grid    (local variable or parameter)
+        -> self.preview_text.configure    (attribute of self (inherited or set at run time))
+        -> self.preview_text.grid    (attribute of self (inherited or set at run time))
+        -> self.record_tree.configure    (attribute of self (inherited or set at run time))
+        -> tk.StringVar    (import tkinter as tk)    x2
+        -> tk.Text    (import tkinter as tk)
+        -> top.columnconfigure    (local variable or parameter)
+        -> top.pack    (local variable or parameter)
+        -> ttk.Button    (from tkinter import ttk)    x5
+        -> ttk.Button(top, text='Browse', command=…    (method or call on an expression)
+        -> ttk.Button(top, text='Load', command=se…    (method or call on an expression)
+        -> ttk.Button(top, text='Normalize', comma…    (method or call on an expression)
+        -> ttk.Button(top, text='Save As', command…    (method or call on an expression)
+        -> ttk.Button(top, text='Save Normalized',…    (method or call on an expression)
+        -> ttk.Entry    (from tkinter import ttk)    x2
+        -> ttk.Entry(top, textvariable=self.output…    (method or call on an expression)
+        -> ttk.Entry(top, textvariable=self.source…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)    x4
+        -> ttk.Label    (from tkinter import ttk)    x3
+        -> ttk.Label(preview_frame, text='Normaliz…    (method or call on an expression)
+        -> ttk.Label(top, text='Output JSON').grid    (method or call on an expression)
+        -> ttk.Label(top, text='Source JSON').grid    (method or call on an expression)
+        -> ttk.Panedwindow    (from tkinter import ttk)
+        -> ttk.Scrollbar    (from tkinter import ttk)    x2
+    _build_ui()    344
+        -> max    (builtin)
+        -> self._build_config_tab    (this class, line 614)
+        -> self._build_gateway_tab    (this class, line 934)
+        -> self._build_log_tab    (this class, line 559)
+        -> self._build_normalize_tab    (this class, line 395)
+        -> self._build_ui_choices_tab    (this class, line 718)
+        -> self.notebook.add    (attribute of self (inherited or set at run time))    x5
+        -> self.notebook.bind    (attribute of self (inherited or set at run time))
+        -> self.notebook.pack    (attribute of self (inherited or set at run time))
+        -> self.status_bar.bind    (attribute of self (inherited or set at run time))
+        -> self.status_bar.configure    (attribute of self (inherited or set at run time))
+        -> self.status_bar.pack    (attribute of self (inherited or set at run time))
+        -> tk.StringVar    (import tkinter as tk)
+        -> ttk.Frame    (from tkinter import ttk)    x5
+        -> ttk.Label    (from tkinter import ttk)
+        -> ttk.Notebook    (from tkinter import ttk)
+    _build_ui_choices_tab()    718
+        -> density_box.grid    (local variable or parameter)
+        -> density_names    (from cpc_ui_theme import density_names)
+        -> frame.columnconfigure    (local variable or parameter)
+        -> frame.pack    (local variable or parameter)
+        -> getattr    (builtin)    x4
+        -> save_config    (this file, line 183)
+        -> self._comboboxes.append    (attribute of self (inherited or set at run time))    x2
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x6
+        -> self.host_context.get    (attribute of self (inherited or set at run time))    x4
+        -> str    (builtin)    x6
+        -> theme_box.grid    (local variable or parameter)
+        -> theme_names    (from cpc_ui_theme import theme_names)
+        -> tk.StringVar    (import tkinter as tk)    x6
+        -> ttk.Button    (from tkinter import ttk)    x2
+        -> ttk.Button(frame, text='Apply', command…    (method or call on an expression)
+        -> ttk.Button(frame, text='Save', command=…    (method or call on an expression)
+        -> ttk.Combobox    (from tkinter import ttk)    x2
+        -> ttk.Entry    (from tkinter import ttk)    x2
+        -> ttk.Entry(frame, textvariable=self.heig…    (method or call on an expression)
+        -> ttk.Entry(frame, textvariable=self.widt…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)    x4
+        -> ttk.Label(frame, text='Density').grid    (method or call on an expression)
+        -> ttk.Label(frame, text='Saved height').g…    (method or call on an expression)
+        -> ttk.Label(frame, text='Saved width').gr…    (method or call on an expression)
+        -> ttk.Label(frame, text='Theme').grid    (method or call on an expression)
+        -> ui_choices.attach    (import cpc_ui_choices as ui_choices)
+    _build_window()    335
+        -> int    (builtin)    x2
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.window.geometry    (attribute of self (inherited or set at run time))
+        -> self.window.minsize    (attribute of self (inherited or set at run time))
+        -> self.window.title    (attribute of self (inherited or set at run time))
+    _display_data()    1337
+        -> enumerate    (builtin)
+        -> insert_row    (from cpc_treeviews import insert_row)    x2
+        -> isinstance    (builtin)    x4
+        -> json.dumps    (import json)    x3
+        -> len    (builtin)    x5
+        -> self._json_indent    (this class, line 1450)
+        -> self.preview_text.delete    (attribute of self (inherited or set at run time))
+        -> self.preview_text.insert    (attribute of self (inherited or set at run time))
+        -> self.record_items.clear    (attribute of self (inherited or set at run time))
+        -> self.record_tree.delete    (attribute of self (inherited or set at run time))
+        -> self.record_tree.focus    (attribute of self (inherited or set at run time))
+        -> self.record_tree.get_children    (attribute of self (inherited or set at run time))    x2
+        -> self.record_tree.selection_set    (attribute of self (inherited or set at run time))
+        -> type    (builtin)    x2
+    _gateway_fallback()    992
+        -> child.destroy    (local variable or parameter)
+        -> getattr    (builtin)
+        -> host.winfo_children    (local variable or parameter)
+        -> ttk.Label    (from tkinter import ttk)    x2
+        -> ttk.Label(host, text='User Gateway', fo…    (method or call on an expression)
+        -> ttk.Label(host, text=message, wraplengt…    (method or call on an expression)
+    _gateway_path()    1025
+        -> os.path.isabs    (import os)
+        -> os.path.join    (import os)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.cfg.get('gateway', {}).get    (method or call on an expression)
+        -> str    (builtin)
+    _json_indent()    1450
+        -> int    (builtin)
+        -> max    (builtin)
+        -> self.cfg['app'].get    (method or call on an expression)
+    _on_close()    1800
+        -> self.shutdown    (this class, line 1770)
+        -> self.window.destroy    (attribute of self (inherited or set at run time))
+    _register_and_style_comboboxes()    1621
+        -> self._comboboxes.append    (attribute of self (inherited or set at run time))
+        -> walk    (local variable or parameter)
+        walk()    1624
+            -> found.append    (unknown, not imported or defined here)
+            -> isinstance    (builtin)
+            -> walk    (unknown, not imported or defined here)
+            -> widget.winfo_children    (local variable or parameter)
+    _restore_tab()    1741
+        -> range    (builtin)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.notebook.index    (attribute of self (inherited or set at run time))
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.notebook.tab    (attribute of self (inherited or set at run time))
+    _tab_changed()    1761
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.notebook.tab    (attribute of self (inherited or set at run time))
+    apply_ui_choices()    1491
+        -> hasattr    (builtin)    x2
+        -> int    (builtin)    x2
+        -> max    (builtin)    x2
+        -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)    x2
+        -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)    x2
+        -> self._apply_theme    (this class, line 1556)
+        -> self.density_var.get    (attribute of self (inherited or set at run time))
+        -> self.height_var.get    (attribute of self (inherited or set at run time))
+        -> self.host_context.get    (attribute of self (inherited or set at run time))    x4
+        -> self.theme_var.get    (attribute of self (inherited or set at run time))
+        -> self.width_var.get    (attribute of self (inherited or set at run time))
+    browse_output()    1074
+        -> filedialog.asksaveasfilename    (from tkinter import filedialog)
+        -> os.path.basename    (import os)    x2
+        -> os.path.dirname    (import os)    x2
+        -> os.path.splitext    (import os)
+        -> self.output_var.get    (attribute of self (inherited or set at run time))
+        -> self.output_var.get().strip    (method or call on an expression)
+        -> self.output_var.set    (attribute of self (inherited or set at run time))
+        -> self.source_var.get    (attribute of self (inherited or set at run time))
+        -> self.source_var.get().strip    (method or call on an expression)
+    browse_source()    1045
+        -> filedialog.askopenfilename    (from tkinter import filedialog)
+        -> os.path.dirname    (import os)    x2
+        -> os.path.isdir    (import os)
+        -> os.path.splitext    (import os)
+        -> self.load_source    (this class, line 1107)
+        -> self.output_var.get    (attribute of self (inherited or set at run time))
+        -> self.output_var.get().strip    (method or call on an expression)
+        -> self.output_var.set    (attribute of self (inherited or set at run time))
+        -> self.source_var.get    (attribute of self (inherited or set at run time))
+        -> self.source_var.get().strip    (method or call on an expression)
+        -> self.source_var.set    (attribute of self (inherited or set at run time))
+    clear_log()    1479
+        -> self.log_text.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.log_text.delete    (attribute of self (inherited or set at run time))
+    load_source()    1107
+        -> json.load    (import json)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> open    (builtin)
+        -> os.path.isfile    (import os)
+        -> os.path.splitext    (import os)
+        -> save_config    (this file, line 183)
+        -> self._display_data    (this class, line 1337)
+        -> self.config_vars['LAST_SOURCE_FILE'].set    (method or call on an expression)
+        -> self.log    (this class, line 1464)    x2
+        -> self.output_var.get    (attribute of self (inherited or set at run time))
+        -> self.output_var.get().strip    (method or call on an expression)
+        -> self.output_var.set    (attribute of self (inherited or set at run time))
+        -> self.source_var.get    (attribute of self (inherited or set at run time))
+        -> self.source_var.get().strip    (method or call on an expression)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x5
+        -> self.update_idletasks    (attribute of self (inherited or set at run time))
+    log()    1464
+        -> self.log_text.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.log_text.insert    (attribute of self (inherited or set at run time))
+        -> self.log_text.see    (attribute of self (inherited or set at run time))
+        -> time.strftime    (import time)
+    normalize_source()    1172
+        -> all    (builtin)
+        -> clean_data    (this file, line 190)
+        -> copy.deepcopy    (import copy)
+        -> isinstance    (builtin)    x2
+        -> len    (builtin)    x2
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> normalize_records    (this file, line 217)
+        -> self._display_data    (this class, line 1337)
+        -> self.load_source    (this class, line 1107)
+        -> self.log    (this class, line 1464)    x3
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x4
+        -> self.update_idletasks    (attribute of self (inherited or set at run time))
+    record_selected()    1424
+        -> json.dumps    (import json)
+        -> self._json_indent    (this class, line 1450)
+        -> self.preview_text.delete    (attribute of self (inherited or set at run time))
+        -> self.preview_text.insert    (attribute of self (inherited or set at run time))
+        -> self.record_items.get    (attribute of self (inherited or set at run time))
+        -> self.record_tree.selection    (attribute of self (inherited or set at run time))
+    reload_config()    1688
+        -> app.get    (local variable or parameter)    x3
+        -> hasattr    (builtin)
+        -> load_config    (this file, line 166)
+        -> self._apply_theme    (this class, line 1556)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.config_vars.items    (attribute of self (inherited or set at run time))
+        -> self.density_var.set    (attribute of self (inherited or set at run time))
+        -> self.output_var.set    (attribute of self (inherited or set at run time))
+        -> self.source_var.set    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.theme_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x3
+        -> variable.set    (local variable or parameter)
+    save_config_from_ui()    1650
+        -> int    (builtin)
+        -> max    (builtin)
+        -> save_config    (this file, line 183)
+        -> self.config_vars['JSON_INDENT'].get    (method or call on an expression)
+        -> self.config_vars['JSON_INDENT'].set    (method or call on an expression)
+        -> self.config_vars['LAST_OUTPUT_FILE'].get    (method or call on an expression)
+        -> self.config_vars['LAST_OUTPUT_FILE'].ge…    (method or call on an expression)
+        -> self.config_vars['LAST_SOURCE_FILE'].get    (method or call on an expression)
+        -> self.config_vars['LAST_SOURCE_FILE'].ge…    (method or call on an expression)
+        -> self.log    (this class, line 1464)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+    save_normalized()    1237
+        -> int    (builtin)
+        -> json.dump    (import json)
+        -> max    (builtin)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> open    (builtin)
+        -> os.fsync    (import os)
+        -> os.makedirs    (import os)
+        -> os.path.abspath    (import os)
+        -> os.path.dirname    (import os)
+        -> os.path.isfile    (import os)
+        -> os.remove    (import os)
+        -> os.replace    (import os)
+        -> save_config    (this file, line 183)
+        -> self.browse_output    (this class, line 1074)
+        -> self.cfg['app'].get    (method or call on an expression)
+        -> self.config_vars['LAST_OUTPUT_FILE'].set    (method or call on an expression)
+        -> self.log    (this class, line 1464)    x2
+        -> self.normalize_source    (this class, line 1172)
+        -> self.output_var.get    (attribute of self (inherited or set at run time))    x2
+        -> self.output_var.get().strip    (method or call on an expression)    x2
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x4
+        -> self.update_idletasks    (attribute of self (inherited or set at run time))
+        -> target.fileno    (local variable or parameter)
+        -> target.flush    (local variable or parameter)
+        -> target.write    (local variable or parameter)
+    save_ui_choices()    1549
+        -> save_config    (this file, line 183)
+        -> self.apply_ui_choices    (this class, line 1491)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+    shutdown()    1770
+        -> hasattr    (builtin)
+        -> int    (builtin)    x2
+        -> save_config    (this file, line 183)
+        -> self._tab_changed    (this class, line 1761)
+        -> self.height_var.get    (attribute of self (inherited or set at run time))
+        -> self.output_var.get    (attribute of self (inherited or set at run time))
+        -> self.output_var.get().strip    (method or call on an expression)
+        -> self.source_var.get    (attribute of self (inherited or set at run time))
+        -> self.source_var.get().strip    (method or call on an expression)
+        -> self.update_idletasks    (attribute of self (inherited or set at run time))
+        -> self.width_var.get    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_height    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_width    (attribute of self (inherited or set at run time))
+(module level)
+    -> main    (this file, line 1858)
+    -> os.path.abspath    (import os)
+    -> os.path.dirname    (import os)
+    -> os.path.join    (import os)
+    -> Path    (from pathlib import Path)    x2
+    -> Path(__file__).resolve    (method or call on an expression)
+    -> str    (builtin)    x4
+    -> sys.path.append    (import sys)
+    -> sys.path.insert    (import sys)
+    -> SystemExit    (builtin)
+    -> x_path.is_dir    (unknown, not imported or defined here)

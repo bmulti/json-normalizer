@@ -1,0 +1,85 @@
+source_file = cpc_normaize_json.py
+source_modified = 2026-11-22 16:58:27
+import   origin   line;  indented: external name   xN calls   called by (def paths)
+
+from pathlib import Path    standard library    line 53    CAUTION: source file not named at the call
+        Path    x2    called by (module level)
+import sys    standard library    line 54
+        sys.path.append    x1    called by (module level)
+        sys.path.insert    x1    called by (module level)
+import argparse    standard library    line 78
+        argparse.ArgumentParser    x1    called by parse_args
+import copy    standard library    line 79
+        copy.deepcopy    x4    called by deep_merge, JSONNormalizerApp.normalize_source, load_config, normalize_records
+import json    standard library    line 80
+        json.dump    x2    called by JSONNormalizerApp.save_normalized, save_config
+        json.dumps    x4    called by JSONNormalizerApp._display_data, JSONNormalizerApp.record_selected
+        json.load    x2    called by JSONNormalizerApp.load_source, load_config
+import os    standard library    line 81
+        os.fsync    x1    called by JSONNormalizerApp.save_normalized
+        os.makedirs    x1    called by JSONNormalizerApp.save_normalized
+        os.path.abspath    x2    called by (module level), JSONNormalizerApp.save_normalized
+        os.path.basename    x2    called by JSONNormalizerApp.browse_output
+        os.path.dirname    x6    called by (module level), JSONNormalizerApp.browse_output, JSONNormalizerApp.browse_source, JSONNormalizerApp.save_normalized
+        os.path.isabs    x1    called by JSONNormalizerApp._gateway_path
+        os.path.isdir    x1    called by JSONNormalizerApp.browse_source
+        os.path.isfile    x4    called by JSONNormalizerApp.__init__, JSONNormalizerApp.load_source, JSONNormalizerApp.save_normalized, load_config
+        os.path.join    x2    called by (module level), JSONNormalizerApp._gateway_path
+        os.path.splitext    x3    called by JSONNormalizerApp.browse_output, JSONNormalizerApp.browse_source, JSONNormalizerApp.load_source
+        os.remove    x1    called by JSONNormalizerApp.save_normalized
+        os.replace    x2    called by JSONNormalizerApp.save_normalized, save_config
+import sys    standard library    line 82
+        sys.path.append    x1    called by (module level)
+        sys.path.insert    x1    called by (module level)
+import time    standard library    line 83
+        time.strftime    x1    called by JSONNormalizerApp.log
+import tkinter as tk    standard library    line 84
+        tk.StringVar    x12    called by JSONNormalizerApp._build_config_tab, JSONNormalizerApp._build_normalize_tab, JSONNormalizerApp._build_ui, JSONNormalizerApp._build_ui_choices_tab
+        tk.Text    x2    called by JSONNormalizerApp._build_log_tab, JSONNormalizerApp._build_normalize_tab
+        tk.Tk    x1    called by main
+from tkinter import filedialog    standard library    line 85    CAUTION: source file not named at the call
+        filedialog.askopenfilename    x1    called by JSONNormalizerApp.browse_source
+        filedialog.asksaveasfilename    x1    called by JSONNormalizerApp.browse_output
+from tkinter import messagebox    standard library    line 85    CAUTION: source file not named at the call
+        messagebox.showerror    x3    called by JSONNormalizerApp.load_source, JSONNormalizerApp.normalize_source, JSONNormalizerApp.save_normalized
+from tkinter import ttk    standard library    line 85    CAUTION: source file not named at the call
+        ttk.Button    x10    called by JSONNormalizerApp._build_config_tab, JSONNormalizerApp._build_log_tab, JSONNormalizerApp._build_normalize_tab, JSONNormalizerApp._build_ui_choices_tab
+        ttk.Combobox    x2    called by JSONNormalizerApp._build_ui_choices_tab
+        ttk.Entry    x5    called by JSONNormalizerApp._build_config_tab, JSONNormalizerApp._build_normalize_tab, JSONNormalizerApp._build_ui_choices_tab
+        ttk.Frame    x15    called by JSONNormalizerApp._build_config_tab, JSONNormalizerApp._build_gateway_tab, JSONNormalizerApp._build_log_tab, JSONNormalizerApp._build_normalize_tab, JSONNormalizerApp._build_ui, JSONNormalizerApp._build_ui_choices_tab
+        ttk.Label    x14    called by JSONNormalizerApp._build_config_tab, JSONNormalizerApp._build_log_tab, JSONNormalizerApp._build_normalize_tab, JSONNormalizerApp._build_ui, JSONNormalizerApp._build_ui_choices_tab, JSONNormalizerApp._gateway_fallback
+        ttk.Notebook    x1    called by JSONNormalizerApp._build_ui
+        ttk.Panedwindow    x1    called by JSONNormalizerApp._build_normalize_tab
+        ttk.Scrollbar    x3    called by JSONNormalizerApp._build_log_tab, JSONNormalizerApp._build_normalize_tab
+import cpc_ui_choices as ui_choices    third party or your own file    line 88
+        ui_choices.attach    x1    called by JSONNormalizerApp._build_ui_choices_tab
+import cpc_ui_state as ui_state    third party or your own file    line 93
+        (no calls through this import)
+import gateway_controller    third party or your own file    line 98
+        (no calls through this import)
+from cpc_ui_theme import apply_app_icon    third party or your own file    line 102    CAUTION: source file not named at the call
+        apply_app_icon    x1    called by JSONNormalizerApp.__init__
+from cpc_ui_theme import apply_theme    third party or your own file    line 102    CAUTION: source file not named at the call
+        apply_theme    x1    called by JSONNormalizerApp._apply_theme
+from cpc_ui_theme import density_names    third party or your own file    line 102    CAUTION: source file not named at the call
+        density_names    x1    called by JSONNormalizerApp._build_ui_choices_tab
+from cpc_ui_theme import normalize_density_name    third party or your own file    line 102    CAUTION: source file not named at the call
+        normalize_density_name    x5    called by JSONNormalizerApp.__init__, JSONNormalizerApp._apply_theme, JSONNormalizerApp.apply_ui_choices, load_config
+from cpc_ui_theme import normalize_theme_name    third party or your own file    line 102    CAUTION: source file not named at the call
+        normalize_theme_name    x5    called by JSONNormalizerApp.__init__, JSONNormalizerApp._apply_theme, JSONNormalizerApp.apply_ui_choices, load_config
+from cpc_ui_theme import theme_names    third party or your own file    line 102    CAUTION: source file not named at the call
+        theme_names    x1    called by JSONNormalizerApp._build_ui_choices_tab
+from cpc_ui_theme import theme_palette    third party or your own file    line 102    CAUTION: source file not named at the call
+        theme_palette    x2    called by JSONNormalizerApp._apply_theme
+from cpc_treeviews import TreeviewMixin    third party or your own file    line 112    CAUTION: source file not named at the call
+        (no calls through this import)
+from cpc_treeviews import build_treeview    third party or your own file    line 112    CAUTION: source file not named at the call
+        build_treeview    x1    called by JSONNormalizerApp._build_normalize_tab
+from cpc_treeviews import insert_row    third party or your own file    line 112    CAUTION: source file not named at the call
+        insert_row    x2    called by JSONNormalizerApp._display_data
+
+Unknown source (not imported or defined in this file)
+    unknown, not imported or defined here
+        found.append    x1    called by JSONNormalizerApp._register_and_style_comboboxes.walk
+        walk    x1    called by JSONNormalizerApp._register_and_style_comboboxes.walk
+        x_path.is_dir    x1    called by (module level)

@@ -1,0 +1,179 @@
+source_file = cpc_normaize_json.py
+source_modified = 2026-11-22 16:58:27
+name: annotation = value    line numbers   (functions: name() with their variables indented; classes: first-last)
+
+AKA = 'Json Normalizer'    116
+APP_DIR = os.path.dirname(os.path.abspath(__file__))    121
+APP_NAME = 'JSON Normalizer'    119
+APP_VERSION = '2026-09-20'    120
+CONFIG_PATH = os.path.join(APP_DIR, 'cpc_common_normalize_json.…    122
+DEFAULT_CONFIG = {'ui_theme_name': 'Light Blue', 'ui_density': 'No…    125
+DESC = 'Clean JSON and normalize record fields'    118
+description = 'Standalone and attachable JSON cleaning and reco…    73
+gateway_controller = None    100
+named = 'JSON Normalizer'    75
+PROGRAM = 'cpc_common_normalize_json'    117
+project = 'Util'    74
+shared_path = Path(__file__).resolve().parent.parent    60
+TV_RECORDS = {'title': 'JSON Normalizer Records', 'columns': (…    144
+ui_choices = None    90
+ui_state = None    95
+version = '3'    76
+VERSION = '2'    115
+x_path = Path('X:\\cc_lib')    56
+attach()
+    host_context
+    initial_file
+deep_merge()
+    key
+    result
+    value
+load_config()
+    cfg
+    loaded
+    source
+main()
+    args
+    initial_file
+    root
+normalize_records()
+    all_fields
+    field
+    field_defaults
+    record
+parse_args()
+    parser
+save_config()
+    target
+    temporary_path
+class JSONNormalizerApp    251-1804
+    self._comboboxes = []    316
+    self.cfg = load_config()    282, 1689
+    self.colors = dict(self.host_context.get('colors') or theme_pal…    1599, 1609, 1615
+    self.config_tab = ttk.Frame(self.notebook)    371
+    self.config_vars = {'LAST_SOURCE_FILE': tk.StringVar(value=str(app.g…    650
+    self.density_var = tk.StringVar(value=str(self.host_context.get('den…    734, 795
+    self.embedded = bool(embedded or not isinstance(master, (tk.Tk, t…    262
+    self.gateway_controller = None    315, 977
+    self.gateway_host = ttk.Frame(self.gateway_tab)    938
+    self.gateway_tab = ttk.Frame(self.notebook)    373
+    self.height_var = tk.StringVar(value=str(self.cfg.get('window_heigh…    751, 817
+    self.host_context = dict(host_context or {})    265
+    self.log_tab = ttk.Frame(self.notebook)    370
+    self.log_text = tk.Text(frame, wrap='word', state='disabled', pad…    587
+    self.normalize_tab = ttk.Frame(self.notebook)    369
+    self.normalized_data = None    313, 1136, 1202
+    self.notebook = ttk.Notebook(self)    362
+    self.output_file = str(self.host_context.get('output_file') or app.g…    306, 1105, 1306
+    self.output_var = tk.StringVar(value=self.output_file)    434
+    self.preview_text = tk.Text(preview_box, wrap='none', padx=8, pady=8)    523
+    self.record_items = {}    314
+    self.record_tree = build_treeview(record_frame, TV_RECORDS, owner=se…    490
+    self.show_gateway = True if not self.embedded else bool(self.host_con…    268
+    self.show_ui_choices = True if not self.embedded else bool(self.host_con…    273
+    self.source_data = None    312, 1133
+    self.source_file = str(initial_file or self.host_context.get('source…    299, 1064, 1135
+    self.source_var = tk.StringVar(value=self.source_file)    403
+    self.status_bar = ttk.Label(self, textvariable=self.status_var, anc…    346
+    self.status_var = tk.StringVar(value='Ready')    345
+    self.theme_var = tk.StringVar(value=str(self.host_context.get('the…    733, 781
+    self.ui_choices_controller = ui_choices.attach(self.ui_tab, window=self.window…    721, 769
+    self.ui_tab = ttk.Frame(self.notebook)    372
+    self.width_var = tk.StringVar(value=str(self.cfg.get('window_width…    735, 809
+    self.window = master.winfo_toplevel()    266
+    __init__()
+        app
+        host_density
+        host_theme
+    _apply_theme()
+        density
+        density_source
+        theme_name
+        theme_source
+    _attach_gateway_controller()
+        cls
+        host
+    _build_config_tab()
+        app
+        buttons
+        frame
+        key
+        label
+        labels
+        row
+    _build_log_tab()
+        frame
+        scroll
+        toolbar
+    _build_normalize_tab()
+        body
+        preview_box
+        preview_frame
+        preview_x
+        preview_y
+        record_frame
+        top
+    _build_ui_choices_tab()
+        density_box
+        frame
+        theme_box
+    _display_data()
+        children
+        field_count
+        iid
+        index
+        item
+        preview
+        type_name
+    _gateway_fallback()
+        child
+        host
+    _gateway_path()
+        configured
+    _register_and_style_comboboxes()
+        combo
+        found
+        walk()
+            child
+            children
+    _restore_tab()
+        index
+        wanted
+    apply_ui_choices()
+        host_density
+        host_theme
+    browse_output()
+        base
+        current
+        initialdir
+        initialfile
+        selected
+        source
+    browse_source()
+        base
+        current
+        extension
+        selected
+    load_source()
+        base
+        extension
+        path
+        source
+    normalize_source()
+        normalized
+        record_mode
+    record_selected()
+        item
+        selection
+    reload_config()
+        app
+        key
+        variable
+    save_config_from_ui()
+        app
+        indent
+    save_normalized()
+        indent
+        output
+        target
+        temporary
